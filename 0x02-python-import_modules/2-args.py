@@ -5,7 +5,7 @@ if __name__ == "__main__":
     num_args = len(argv)
     args_list = argv
 
-    if num_args == 1:
+    if num_args <= 1:
         print(f"{num_args - 1} arguments.")
     else:
         print(f"{num_args - 1} arguments:")
