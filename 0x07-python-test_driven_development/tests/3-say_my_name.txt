@@ -1,0 +1,55 @@
+#George Maroa <mgm.engineeringtie847@gmail.com>
+
+#####################
+module: 3-say_my_name
+#####################
+
+How to use the say_my_name function
++++++++++++++++++++++++++++++++++++
+
+import the function from module:
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Examples:
+    >>> say_my_name('George', 'Maroa')
+    My name is George Maroa
+
+    >>> say_my_name('Maroa')
+    My name is Maroa 
+
+    >>> say_my_name(20, 'Maroa')
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name('George', 20)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("")
+    My name is  
+
+    >>> say_my_name("", "")
+    My name is  
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    >>> say_my_name('George', 'Maroa', 'Matiko')
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> say_my_name('George', None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(['George', 'Maroa'])
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+ 
