@@ -1,0 +1,55 @@
+#George Maroa <mgm.engineeringtie847@gmail.com>
+
+#####################
+module: 0-add_integer
+#####################
+
+How to use the add_integer function
++++++++++++++++++++++++++++++++++++
+
+import the function from module:
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Examples:
+    >>> add_integer(2, 2)
+    4
+
+    >>> add_integer(3, 9.5)
+    12
+
+    >>> add_integer(4, -2)
+    2
+
+    >>> add_integer(-4, -1)
+    -5
+
+    >>> add_integer(-2.9, -0.2)
+    -2
+    
+    >>> add_integer(4.0, 8.0)
+    12
+
+    >>> add_integer(4, "alx")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer("4", "alx")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer("George", "Maroa")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
