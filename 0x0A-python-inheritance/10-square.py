@@ -2,6 +2,8 @@
 """
 contains class square
 """
+
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
