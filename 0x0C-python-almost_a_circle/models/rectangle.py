@@ -111,16 +111,52 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
-        attribute_list = ['id', 'width', 'height', 'x', 'y']
+        # attribute_list = ['id', 'width', 'height', 'x', 'y']
         if args:
             for i, arg in enumerate(args):
                 # iterating while keeping track of the index
                 # for index, item in enumerate(iterable):
-                if i < len(attribute_list):
-                    setattr(self, attribute_list[i], args[i])
-                else:
-                    break
+                # if i < len(attribute_list):
+                #     setattr(self, attribute_list[i], args[i])
+                # else:
+                #     break
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y == arg
         if kwargs:
-            for key, value in kwargs.items():
-                if key in attribute_list:
-                    setattr(self, key, value)
+            # for key, value in kwargs.items():
+            #     if key in attribute_list:
+            #         setattr(self, key, value)
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle"""
+        # rectangle_dict = {}
+        # rectangle_dict["id"] = self.id
+        # rectangle_dict["width"] = self.width
+        # rectangle_dict["height"] = self.height
+        # rectangle_dict["x"] = self.x
+        # rectangle_dict["y"] = self.y
+        return {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }
