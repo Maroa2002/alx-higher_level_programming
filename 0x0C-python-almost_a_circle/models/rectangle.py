@@ -10,7 +10,14 @@ from models.base import Base
 class Rectangle(Base):
     """Class Rectangle inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """class constructor"""
+        """
+        class constructor
+        width: Width of the rectangle.
+        height: Height of the rectangle.
+        x (defaulting to 0): x-coordinate of the rectangle.
+        y (defaulting to 0): y-coordinate of the rectangle.
+        id (defaulting to None): An optional identifier for the rectangle.
+        """
         # Call the super class with id
         super().__init__(id)
         self.width = width
@@ -85,3 +92,35 @@ class Rectangle(Base):
     def area(self):
         """returns the area value"""
         return (self.__height * self.__width)
+
+    def display(self):
+        """prints the Rectangle instance with the character #"""
+        for _ in range(self.__y):
+            # vertical offset - y-coordinate
+            print()
+
+        for _ in range(self.__height):
+            # horizontal offset - x-coordinate
+            print((" " * self.__x) + ("#" * self.__width))
+
+    def __str__(self):
+        """returns string representation of an obeject"""
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        attribute_list = ['id', 'width', 'height', 'x', 'y']
+        if args:
+            for i, arg in enumerate(args):
+                # iterating while keeping track of the index
+                # for index, item in enumerate(iterable):
+                if i < len(attribute_list):
+                    setattr(self, attribute_list[i], args[i])
+                else:
+                    break
+        if kwargs:
+            for key, value in kwargs.items():
+                if key in attribute_list:
+                    setattr(self, key, value)
