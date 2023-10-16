@@ -128,7 +128,7 @@ class Rectangle(Base):
                     self.height = arg
                 elif i == 3:
                     self.x = arg
-                elif i == 4:
+                else:
                     self.y == arg
         if kwargs:
             # for key, value in kwargs.items():
