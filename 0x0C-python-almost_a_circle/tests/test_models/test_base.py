@@ -8,9 +8,12 @@ module: base.py
 """
 
 
+import sys
 import unittest
 import inspect
+import io
 import pep8
+from contextlib import redirect_stdout
 from models.base import Base
 
 

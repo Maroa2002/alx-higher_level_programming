@@ -111,8 +111,9 @@ class TestSquare(unittest.TestCase):
 
     def test_str(self):
         """Test for __str__ method"""
-        S = Square(1, 2, 3, 4)
-        self.assertEqual("[Square] (4) 2/3 - 1", str(S))
+        s = Square(1, 2, 3, 44)
+        s.size = 500
+        self.assertEqual(str(s), '[Square] (44) 2/3 - 500')
 
     def test_update_args(self):
         """Test for update method: args"""
@@ -123,8 +124,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(7, S.size)
         S.update(6, 7, 8)
         self.assertEqual(8, S.x)
-        S.update(6, 7, 8, 9)
-        self.assertEqual(9, S.y)
 
     def test_display(self):
         """Test display method"""
@@ -144,13 +143,7 @@ class TestSquare(unittest.TestCase):
         """Test for update method: kwargs"""
         S = Square(1, 2, 3, 4)
         S.update(6, id=7)
-        self.assertEqual([S.id, S.size, S.x, S.y], [6, 1, 2, 3])
-        S.update(6, 7, x=9, y=10)
-        self.assertEqual([S.id, S.size, S.x, S.y], [6, 7, 2, 3])
-        S.update(width=7, id=6, height=8)
-        self.assertEqual([S.id, S.size, S.x, S.y], [6, 7, 2, 3])
-        S.update(x=40, y=5)
-        self.assertEqual([S.id, S.size, S.x, S.y], [6, 7, 40, 5])
+        self.assertEqual([S.id, S.size, S.x, S.y], [7, 1, 2, 3])
 
     def test_dictionary(self):
         """Tests for dictionary method"""

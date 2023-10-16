@@ -130,7 +130,7 @@ class Rectangle(Base):
                     self.x = arg
                 else:
                     self.y == arg
-        if kwargs:
+        elif kwargs:
             # for key, value in kwargs.items():
             #     if key in attribute_list:
             #         setattr(self, key, value)
